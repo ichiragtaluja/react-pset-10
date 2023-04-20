@@ -10,14 +10,15 @@ export function IndividualEmail() {
   const { mId, unread, isStarred, subject, content } = selectedMail;
   return (
     selectedMail && (
-      <div key={mId}>
+      <div className="card" key={mId}>
         <h3>Subject: {subject}</h3>
-        <button className="card-button-star"onClick={() => dispatch({ type: "STAR", payload: mId })}>
-          {!isStarred ? "Star" : "Starred"}
-        </button>
+
         <p>{content}</p>
 
-        <button className="card-button-read" onClick={() => dispatch({ type: "UNREAD", payload: mId })}>
+        <button
+          className="card-button-read"
+          onClick={() => dispatch({ type: "UNREAD", payload: mId })}
+        >
           {!unread ? "Mark as Unread" : "Mark as Read"}
         </button>
       </div>

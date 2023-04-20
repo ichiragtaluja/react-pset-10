@@ -49,17 +49,25 @@ export function Inbox() {
       {filteredMails.map((mail) => {
         const { mId, unread, isStarred, subject, content } = mail;
         return (
-          <div className=" card" key={mId}>
-            <h3>Subject: {subject}</h3>
-            <button
-              className="card-button-star"
-              onClick={() => dispatch({ type: "STAR", payload: mId })}
-            >
-              {!isStarred ? "Star" : "Starred"}
-            </button>
+          <div
+            style={{ backgroundColor: unread ? "#f5f5f5" : "" }}
+            className=" card"
+            key={mId}
+          >
+            <div className="card-heading">
+              <h3>Subject: {subject}</h3>
+              <button
+                className="card-button-star"
+                onClick={() => dispatch({ type: "STAR", payload: mId })}
+              >
+                {!isStarred ? "Star" : "Starred"}
+              </button>
+            </div>
 
             <p className="card-description">{content}</p>
-            <Link className="card-view-details" to={`/individual-email/${mId}`}>View Details</Link>
+            <Link className="card-view-details" to={`/individual-email/${mId}`}>
+              View Details
+            </Link>
             <button
               className="card-button-delete"
               onClick={() => dispatch({ type: "DELETE", payload: mId })}

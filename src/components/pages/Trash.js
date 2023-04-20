@@ -9,13 +9,13 @@ export function Trash() {
       {state?.deletedMails?.map((mail) => {
         const { mId, unread, isStarred, subject, content, isTrash } = mail;
         return (
-          <div key={mId}>
+          <div className="card" key={mId}>
             <h3>Subject: {subject}</h3>
-            <button onClick={() => dispatch({ type: "STAR", payload: mId })}>
-              {!isStarred ? "Star" : "Starred"}
-            </button>
+
             <p>{content}</p>
-            <Link>View Details</Link>
+            {/* <Link className="card-view-details" to={`/individual-email/${mId}`}>
+              View Details
+            </Link> */}
           </div>
         );
       })}
