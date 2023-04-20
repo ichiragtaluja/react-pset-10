@@ -1,23 +1,22 @@
-import { mails } from "../../data/mails";
 import { Link } from "react-router-dom";
+import { useMail } from "../../contexts/MailProvider";
 
 export function Trash() {
+  const { state, dispatch } = useMail();
   return (
     <>
       <h1>Trash</h1>
-      {mails.map((mail) => {
+      {state?.deletedMails?.map((mail) => {
         const { mId, unread, isStarred, subject, content, isTrash } = mail;
         return (
-          isTrash && (
-            <div key={mId}>
-              <h3>Subject: {subject}</h3>
-              <p>{content}</p>
-              <Link>View Details</Link>
-              <button>Delete</button>
-              <button>Mark as Unread</button>
-              <button>Report as Spam</button>
-            </div>
-          )
+          <div key={mId}>
+            <h3>Subject: {subject}</h3>
+            <button onClick={() => dispatch({ type: "STAR", payload: mId })}>
+              {!isStarred ? "Star" : "Starred"}
+            </button>
+            <p>{content}</p>
+            <Link>View Details</Link>
+          </div>
         );
       })}
     </>

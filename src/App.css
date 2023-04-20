@@ -2,32 +2,7 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
+/* 
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -35,4 +10,94 @@
   to {
     transform: rotate(360deg);
   }
+} */
+
+nav {
+  display: block;
+  width: 100px;
+  background: rgb(255, 255, 255);
+
+  height: 100%; /* Full height */
+  position: fixed; /* Make it stick, even on scroll */
+  overflow: auto;
+  top: 0px;
+}
+
+nav a {
+  display: block;
+
+  text-decoration: none;
+  font-weight: 800;
+  padding: 10px 0;
+  margin-top: 100px;
+  /* border-right: 1px solid black;  */
+}
+
+fieldset {
+  width: 60%;
+  margin: auto;
+  padding: 10px 40px 20px 40px;
+  border-radius: 10px;
+  background-color: rgb(249, 247, 255);
+  border: 0.5px solid rgb(189, 189, 189);
+}
+
+legend {
+  color: rgb(3, 68, 3);
+}
+
+label {
+  margin-left: 30px;
+}
+
+.heading {
+  background-color: rgb(242, 239, 252);
+  margin-top: 0px;
+  padding: 20px;
+}
+
+.card {
+  width: 800px;
+  margin: auto;
+  border: 0.5px solid rgb(215, 215, 215);
+  padding: 20px;
+  border-radius: 15px;
+  text-align: left;
+}
+
+.card-description {
+  color: grey;
+  font-size: small;
+}
+
+button {
+  padding: 5px 17px;
+  margin: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(240, 242, 244);
+  
+}
+
+h3 {
+  margin-top: 0px;
+  display: inline;
+}
+
+.card-button-star {
+  color: rgb(1, 86, 18);
+  background-color: rgb(199, 252, 202);
+}
+
+button:hover {
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.card-view-details {
+  text-decoration: none;
+  color: black;
+}
+.card-view-details:hover {
+  font-weight: bold;
 }

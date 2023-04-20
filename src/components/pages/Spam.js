@@ -1,23 +1,20 @@
-import { mails } from "../../data/mails";
-import { Link
- } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { useMail } from "../../contexts/MailProvider";
 export function Spam() {
+  const { state, dispatch } = useMail();
   return (
     <>
       <h1>Spam</h1>
-      {mails.map((mail) => {
+      {state?.spamMails?.map((mail) => {
         const { mId, unread, isStarred, subject, content, isSpam } = mail;
         return (
-          isSpam && (
-            <div key={mId}>
-              <h3>Subject: {subject}</h3>
-              <p>{content}</p>
-              <Link>View Details</Link>
-              <button>Delete</button>
-              <button>Mark as Unread</button>
-              <button>Report as Spam</button>
-            </div>
-          )
+          <div key={mId}>
+            <h3>Subject: {subject}</h3>
+
+            <p>{content}</p>
+
+            <Link>View Details</Link>
+          </div>
         );
       })}
     </>
