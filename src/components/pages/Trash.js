@@ -13,9 +13,9 @@ export function Trash() {
             <h3>Subject: {subject}</h3>
 
             <p>{content}</p>
-            {/* <Link className="card-view-details" to={`/individual-email/${mId}`}>
+            <Link className="card-view-details" to={`/individual-email/${mId}`}>
               View Details
-            </Link> */}
+            </Link>
           </div>
         );
       })}

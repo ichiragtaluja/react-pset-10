@@ -14,9 +14,9 @@ export function Spam() {
 
             <p>{content}</p>
 
-            {/* <Link className="card-view-details" to={`/individual-email/${mId}`}>
+            <Link className="card-view-details" to={`/individual-email/${mId}`}>
               View Details
-            </Link> */}
+            </Link>
           </div>
         );
       })}
